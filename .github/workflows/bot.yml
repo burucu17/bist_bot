@@ -1,0 +1,31 @@
+name: BIST Bot
+
+on:
+  schedule:
+    # Her gün Türkiye saati ile 18:30'da çalışır (UTC 15:30)
+    - cron: '30 15 * * 1-5'
+  workflow_dispatch:  # Elle çalıştırma butonu ekler
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Kodu indir
+        uses: actions/checkout@v4
+      
+      - name: Python kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Kütüphaneleri kur
+        run: |
+          python -m pip install --upgrade pip
+          pip install yfinance requests pandas numpy
+      
+      - name: Botu çalıştır
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: python bist_bot.py
