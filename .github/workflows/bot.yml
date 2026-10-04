@@ -3,7 +3,8 @@ name: BIST Bot
 on:
   schedule:
     # Her gün Türkiye saati ile 18:30'da çalışır (UTC 15:30)
-    - cron: '30 15 * * 1-5'
+   schedule:
+  - cron: '30 9 * * 1-5'   # 12:30 TR
   workflow_dispatch:  # Elle çalıştırma butonu ekler
 
 jobs:
