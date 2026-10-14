@@ -2,6 +2,7 @@ name: BIST Bot
 
 on:
   schedule:
+    -cron: '30 7 * * 1-5'    # Türkiye saatiyle  10:30
     - cron: '30 23 * * 1-5'    # Türkiye saatiyle 10:30
     - cron: '0 0 * * 1-5'    # Türkiye saatiyle 11:00
     - cron: '30 2 * * 1-5'    # Türkiye saatiyle 13:30
