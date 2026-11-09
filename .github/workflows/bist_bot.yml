@@ -2,12 +2,10 @@ name: BIST Bot
 
 on:
   schedule:
-    - cron: '30 2 * * 1-5'    # Türkiye saatiyle 07:00
-    - cron: '30 3 * * 1-5'    # Türkiye saatiyle 10:30
+    - cron: '30 1 * * 1-5'    # Türkiye saatiyle 07:00
     - cron: '0 5 * * 1-5'    # Türkiye saatiyle 12:00
-    - cron: '30 7 * * 1-5'    # Türkiye saatiyle 13:30
-    - cron: '0 9 * * 1-5'   # Türkiye saatiyle 16:00
-    - cron: '0 11 * * 1-5'    # Türkiye saatiyle 18:30
+    - cron: '0 8 * * 1-5'   # Türkiye saatiyle 16:00
+    - cron: '0 10 * * 1-5'    # Türkiye saatiyle 18:30
   workflow_dispatch:  # Manuel çalıştırma için
 
 jobs:
